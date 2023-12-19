@@ -15,7 +15,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v4
-      - run: docker build -t ghcr.io/smthelse1/node-server-alpine:1.0 /node-app
+      - run: docker build -t ghcr.io/smthelse1/node-server-alpine:1.0 node-app
       - run: docker push ghcr.io/smthelse1/node-server-alpine:1.0
       - name: telegram_success 
         if: success()
