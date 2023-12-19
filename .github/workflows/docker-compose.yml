@@ -17,6 +17,8 @@ jobs:
       - uses: actions/checkout@v4
       - run: docker build -t ghcr.io/smthelse1/node-server-alpine:1.0 node-app
       - run: docker push ghcr.io/smthelse1/node-server-alpine:1.0
+      - run: docker build -t ghcr.io/smthelse1/python-server-alpine:1.0 python-app
+      - run: docker push ghcr.io/smthelse1/python-server-alpine:1.0
       - name: telegram_success 
         if: success()
         uses: appleboy/telegram-action@master
